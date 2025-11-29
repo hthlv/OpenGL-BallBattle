@@ -7,12 +7,20 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <memory>
+#include <random>
 
 Player::Player(std::shared_ptr<Shader> shader) : GameObject(shader) {
     this->init();
 }
 
 void Player::init() {
+    // 玩家初始位置随机
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<float> xposDist(0, 795.0f);
+    std::uniform_real_distribution<float> yposDist(0, 595.0f);
+    this->m_position = glm::vec2(xposDist(gen), yposDist(gen));
+
     this->m_collider =
         std::make_unique<CircleCollider>(this->m_position + this->m_size / 2.0f,
                                          this->m_size.x / 2.0f, "Player");

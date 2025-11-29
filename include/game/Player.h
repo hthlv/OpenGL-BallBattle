@@ -25,7 +25,7 @@ public:
 private:
     float m_moveSpeed = 1.0f;
     glm::vec2 m_position = glm::vec2(0.0f);
-    glm::vec2 m_size = glm::vec2(10.0f);
+    glm::vec2 m_size = glm::vec2(5.0f);
     float m_rotation = 0.0f;
     glm::vec3 m_color = glm::vec3(1.0f);
     std::shared_ptr<Texture2D> m_texture;

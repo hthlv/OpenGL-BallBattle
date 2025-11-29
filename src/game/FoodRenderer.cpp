@@ -30,8 +30,8 @@ void FoodRenderer::update() {
         int needGenerate = numDist(gen);
 
         if (needGenerate > 0) {
-            std::uniform_real_distribution<float> xposDist(0, 800.0f);
-            std::uniform_real_distribution<float> yposDist(0, 600.0f);
+            std::uniform_real_distribution<float> xposDist(0, 795.0f);
+            std::uniform_real_distribution<float> yposDist(0, 595.0f);
             std::uniform_real_distribution<float> sizeDist(1.0f, 10.0f);
             std::uniform_real_distribution<float> colorDist(0.2f, 1.0f);
             std::uniform_real_distribution<float> nutritionDist(0.1, 1.0f);
