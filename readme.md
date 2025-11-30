@@ -10,4 +10,4 @@ make
 
 # 效果图
 
-![img](./game/gif)!
+![img](./game.gif)
