@@ -7,3 +7,7 @@ cmake ..
 make
 ../bin/main
 ```
+
+# 效果图
+
+![img](./game/gif)!
