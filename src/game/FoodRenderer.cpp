@@ -54,6 +54,7 @@ void FoodRenderer::update() {
 
 void FoodRenderer::draw(glm::mat4 projection) {
     this->m_shader->use();
+    this->m_shader->setInt("usePointLight", true);
     this->m_shader->setMat4("projection", projection);
     // 绘制食物
     for (auto &food : m_foods) {

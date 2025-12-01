@@ -56,10 +56,18 @@ void Player::update() {
     if (this->m_collider) {
         this->m_collider->setPosition(this->m_position + this->m_size / 2.0f);
     }
+    // 更新灯光
+    this->m_shader->setVec3("pointLight.position",
+                            glm::vec3(this->m_position, 0.0f));
+    this->m_shader->setVec3("pointLight.color", this->m_color);
+    this->m_shader->setFloat("pointLight.intensity",
+                             std::max(getSize().x / 2.0f, 10.0f));
+    this->m_shader->setFloat("pointLight.radius", 10 * this->m_size.x);
 }
 
 void Player::draw() {
     this->m_shader->use();
+    this->m_shader->setInt("usePointLight", false);
     this->m_sprite->draw(*this->m_texture, this->m_position, this->m_size,
                          this->m_rotation, this->m_color);
 }
